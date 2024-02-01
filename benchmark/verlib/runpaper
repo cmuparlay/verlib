@@ -1,0 +1,72 @@
+#!/usr/bin/python3
+#
+# run all tests
+#
+import sys
+sys.path.insert(1, '..')
+from runtests import *
+
+compile_clear("ver")
+
+class versioned(parameters) :
+    file_suffix = "ver"
+    lists = ["dlist"]
+    list_sizes = [1000]
+    trees = ["arttree", "btree"]
+    tree_sizes = [10000000]
+    zipfians = [0]
+    mix_percents = [[5,0,0,0], [5,1,0,16], [50,0,0,0], [50,1,0,16]]
+    suffixes_all = ["_lck_noversion", "_lck_versioned_ls", "_lf_noversion", "_lf_versioned_ls", "_lf_versioned_tl2s", "_lf_versioned_hs", "_lf_versioned_rs" , "_lf_versioned_ws", "_lf_versioned_ns", "_lf_indirect_ls", "_lf_noshortcut_ls"]
+                    
+run_all(versioned)
+
+class reconce(versioned) :
+    lists = ["list"]
+    trees = ["btree"]
+    suffixes_all = ["_lck_reconce_ls", "_lf_reconce_ls", "_lf_reconce_tl2s", "_lf_reconce_hs", "_lf_reconce_ls_ss"]
+
+run_all(reconce)
+
+class cas_versioned(versioned) :
+    lists = []
+    trees = ["hash_block"]
+    suffixes_all = ["_cas_noversion", "_cas_versioned_ls", "_cas_versioned_tl2s", "_cas_versioned_hs", "_cas_versioned_rs" , "_cas_versioned_ws", "_cas_versioned_ns", "_cas_indirect_ls", "_cas_noshortcut_ls"]
+
+run_all(cas_versioned)
+
+class range(parameters) :
+    file_suffix = "ver"
+    lists = []
+    trees = ["btree"]
+    tree_sizes = [10000000]
+    zipfians = [0]
+    processors = [100]
+    mix_percents = [[100,0,95,4], [100,0,95,64], [100,0,95,1024], [100,0,95,16384]]
+    suffixes_all = ["_lf_versioned_hs", "_lf_versioned_ls", "_lf_versioned_tl2s", "_lf_versioned_rs"]
+
+run_all(range)
+
+class scale(parameters) :
+    file_suffix = "ver"
+    lists = []
+    trees = ["btree", "arttree"]
+    tree_sizes = [10000000]
+    zipfians = [.99]
+    mix_percents = [[5,0,0,0]]
+    processors = [1,64,128,192,256,320,384]
+    suffixes_all = ["_lf_versioned_ls", "_lck_versioned_ls","_lf_noversion", "_lck_noversion"]
+
+run_all(scale)
+
+class other(parameters) :
+    file_suffix = "ver"
+    lists = []
+    trees = ["../../setbench/srivastava_abtree_pub", "../../setbench/leis_olc_art"]
+    tree_sizes = [10000000]
+    zipfians = [.99]
+    mix_percents = [[5,0,0,0]]
+    processors = [1,64,128,192,256]
+    suffixes_all = [""]
+
+run_all(other)
+

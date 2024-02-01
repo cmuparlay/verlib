@@ -1,0 +1,36 @@
+#!/usr/bin/python3
+#
+# run all tests
+#
+import sys
+sys.path.insert(1, '..')
+from runtests import *
+
+compile_clear("ver")
+
+class versioned(parameters) :
+    file_suffix = "ver"
+    lists = ["list"]
+    list_sizes = [100,1000]
+    trees = ["arttree", "btree", "hash_block"]
+    tree_sizes = [100000,10000000]
+    zipfians = [0, .99]
+    mix_percents = [[5,0,0,0], [5,25,0,4], [5,25,0,16], [5,0,95,48], [50,0,0,0]]
+    suffixes_all = ["_lck_noversion", "_lck_versioned_ls", "_lf_noversion", "_lf_indirect_ls", "_lf_noshortcut_ls", "_lf_versioned_hs", "_lf_versioned_ls", "_lf_versioned_rs" , "_lf_versioned_ws", "_lf_versioned_ns" ]
+                    
+run_all(versioned)
+
+class reconce(versioned) :
+    lists = []
+    trees = ["btree"]
+    suffixes_all = ["_lck_reconce_ls", "_lf_reconce_ls", "_lf_reconce_hs", "_lf_reconce_ls_ss"]
+
+run_all(reconce)
+
+class cas_versioned(versioned) :
+    lists = []
+    trees = ["hash_block"]
+    suffixes_all = ["_cas_noversion", "_cas_indirect_ls", "_cas_noshortcut_ls", "_cas_versioned_hs", "_cas_versioned_ls", "_cas_versioned_rs", "_cas_versioned_ws", "_cas_versioned_ns"]
+
+run_all(cas_versioned)
+

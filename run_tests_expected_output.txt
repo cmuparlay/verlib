@@ -1,0 +1,63 @@
+testing: arttree_lf_versioned_hs
+running sanity checks
+finished sanity checks
+testing: arttree_lf_indirect_hs
+running sanity checks
+finished sanity checks
+testing: arttree_lf_noshortcut_hs
+running sanity checks
+finished sanity checks
+testing: btree_lf_versioned_hs
+running sanity checks
+finished sanity checks
+testing: btree_lf_indirect_hs
+running sanity checks
+finished sanity checks
+testing: btree_lf_noshortcut_hs
+running sanity checks
+finished sanity checks
+testing: hash_block_cas_versioned_hs
+running sanity checks
+finished sanity checks
+testing: hash_block_cas_indirect_hs
+running sanity checks
+finished sanity checks
+testing: hash_block_cas_noshortcut_hs
+running sanity checks
+finished sanity checks
+testing: dlist_lf_versioned_hs
+running sanity checks
+finished sanity checks
+testing: dlist_lf_indirect_hs
+running sanity checks
+finished sanity checks
+testing: dlist_lf_noshortcut_hs
+running sanity checks
+finished sanity checks
+testing: btree_lf_reconce_hs
+running sanity checks
+finished sanity checks
+testing: hash_block_cas_versioned_ls
+running sanity checks
+finished sanity checks
+testing: hash_block_cas_versioned_tl2s
+running sanity checks
+finished sanity checks
+testing: hash_block_cas_versioned_ws
+running sanity checks
+finished sanity checks
+testing: hash_block_cas_versioned_rs
+running sanity checks
+finished sanity checks
+testing: btree_lck_versioned_hs
+running sanity checks
+finished sanity checks
+testing: arttree_lck_versioned_hs
+running sanity checks
+finished sanity checks
+testing: btree_lf_versioned_ls
+running sanity checks
+finished sanity checks
+testing: btree_lf_versioned_rs
+running sanity checks
+finished sanity checks
