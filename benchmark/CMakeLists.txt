@@ -10,5 +10,6 @@ foreach(file ${BENCH_FILES})
 endforeach()
 
 add_subdirectory(verlib)
+add_subdirectory(flock)
 
 

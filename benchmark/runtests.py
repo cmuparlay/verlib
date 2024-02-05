@@ -127,9 +127,8 @@ def run_all(params, filename, bindir="") :
     run_tests(params.trees, params.tree_sizes, params, filename, bindir)
     run_tests(params.lists, params.list_sizes, params, filename, bindir)            
                     
-# def compile_clear(file_suffix) :
-#     os.system("make -j")
-#     runstring("git rev-parse --short HEAD", "")
-#     filename = "../../../timings/" + hostname[0:5] + "_" + file_suffix + "_" + today
-#     if os.path.exists(filename) :
-#         os.remove(filename)
+def compile_clear(file_suffix, filename) :
+    os.system("make -j")
+    runstring("git rev-parse --short HEAD", "")
+    if os.path.exists(filename) :
+        os.remove(filename)
