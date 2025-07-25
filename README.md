@@ -6,6 +6,7 @@ VERLIB: Concurrent Versioned Pointers
 Guy Blelloch and Yuanhao Wei
 ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming (PPoPP 2024)
 
+**The most recent version of VERLIB is now available as part of the [Fuse Library](https://github.com/cmuparlay/fuse).**
 
 ## Setting up and compiling
 ```
